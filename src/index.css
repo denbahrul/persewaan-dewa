@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @layer base {
+  :root {
+    background-color: #0b0b0b;
+    color: white;
+  }
+} */
+
+body {
+  font-family: "Funnel Display", sans-serif;
+  background: #f3fff1;
+}

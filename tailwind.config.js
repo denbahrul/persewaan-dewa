@@ -2,14 +2,26 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    colors: {
-      bgDM: "#0B0B0B",
-      redDM: "#F74D4D",
-      textGreyA: "#6A6A6A",
-      textGreyB: "#B7B7B7",
-      textGreyC: "#ABABAB",
+    container: {},
+    extend: {
+      colors: {
+        background: {
+          primary: "#0B0B0B",
+          secondary: "#181818",
+          teritery: "#464646",
+          quaternary: "#212121",
+        },
+        border: {
+          primary: "#BCBCBC",
+        },
+        red: "#F74D4D",
+        green: "#aedea4",
+        gray: {
+          textA: "#6A6A6A",
+          textB: "#B7B7B7",
+          textC: "#ABABAB",
+        },
+      },
     },
-    extend: {},
   },
-  plugins: [],
 };
