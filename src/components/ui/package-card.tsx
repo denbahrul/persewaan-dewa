@@ -1,5 +1,3 @@
-import { AiOutlineHeart } from "react-icons/ai";
-
 export default function PackageCard({
   image,
   name,
