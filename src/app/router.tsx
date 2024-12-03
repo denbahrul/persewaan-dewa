@@ -6,6 +6,7 @@ import TentPackage from "./routes/customer/tent-package";
 import SoundSystem from "./routes/customer/sound";
 import Contact from "./routes/customer/contact";
 import Navbar from "../components/ui/navbar";
+import Detail from "./routes/customer/detail";
 
 export default function RouterApp() {
   const router = createBrowserRouter([
@@ -35,6 +36,10 @@ export default function RouterApp() {
         {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "/detail",
+          element: <Detail />,
         },
       ],
     },
