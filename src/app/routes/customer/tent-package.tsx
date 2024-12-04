@@ -6,11 +6,13 @@ export default function TentPackage() {
       <p className="text-2xl font-bold">Paket Tenda</p>
       <div className="mt-4 grid grid-cols-2 gap-6 lg:grid-cols-3">
         <PackageCard
+          link="/detail-paket"
           name="Paket 1"
           image="https://images.pexels.com/photos/2291462/pexels-photo-2291462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         />
-        <PackageCard name="Paket 2" image="./header.jpg" />
+        <PackageCard link="/detail-paket" name="Paket 2" image="./header.jpg" />
         <PackageCard
+          link="/detail-paket"
           name="Paket 3"
           image="https://images.pexels.com/photos/2291462/pexels-photo-2291462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         />

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Card({
   image,
   name,
@@ -21,9 +23,11 @@ export default function Card({
           <p className="text-sm font-semibold">Rp. {price}</p>
         </div>
       </div>
-      <p className="rounded-md bg-black px-2 py-2 text-center text-xs text-white">
-        Detail
-      </p>
+      <Link to={"/detail-tenda"}>
+        <p className="rounded-md bg-black px-2 py-2 text-center text-xs text-white">
+          Detail
+        </p>
+      </Link>
     </div>
   );
 }

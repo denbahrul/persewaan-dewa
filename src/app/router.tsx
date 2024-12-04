@@ -6,7 +6,10 @@ import TentPackage from "./routes/customer/tent-package";
 import SoundSystem from "./routes/customer/sound";
 import Contact from "./routes/customer/contact";
 import Navbar from "../components/ui/navbar";
-import Detail from "./routes/customer/detail";
+import Detail from "./routes/customer/detail-tenda";
+import DetailTenda from "./routes/customer/detail-tenda";
+import DetailSound from "./routes/customer/detail-sound";
+import DetailPackage from "./routes/customer/detail-package";
 
 export default function RouterApp() {
   const router = createBrowserRouter([
@@ -38,8 +41,16 @@ export default function RouterApp() {
           element: <Contact />,
         },
         {
-          path: "/detail",
-          element: <Detail />,
+          path: "/detail-tenda",
+          element: <DetailTenda />,
+        },
+        {
+          path: "/detail-sound",
+          element: <DetailSound />,
+        },
+        {
+          path: "/detail-paket",
+          element: <DetailPackage />,
         },
       ],
     },

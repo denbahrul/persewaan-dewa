@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function PackageCard({
   image,
   name,
+  link,
 }: {
   image: string;
   name: string;
+  link: string;
 }) {
   return (
     <div className="grid grid-cols-2 gap-2 rounded-lg bg-[#e2fde2] p-4">
@@ -17,9 +21,12 @@ export default function PackageCard({
         </div>
 
         <p className="text-md font-bold">Rp.3.000.000</p>
-        <a className="rounded-md bg-black py-1 text-center text-sm text-white">
-          Detail
-        </a>
+
+        <Link to={link}>
+          <div className="flex w-full justify-center rounded-md bg-black py-1">
+            <a className="text-center text-sm text-white">Detail</a>
+          </div>
+        </Link>
       </div>
       <img
         className="h-52 w-full rounded-lg object-cover"
