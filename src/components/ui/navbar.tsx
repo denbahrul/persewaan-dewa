@@ -1,8 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
+import ImageBg from "./image-bg";
 
 export default function Navbar() {
   return (
     <div>
+      <ImageBg />
       <div className="fixed left-0 right-0 top-0 z-50 mx-2 mt-2">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between rounded-xl bg-black px-6 py-1 text-white">
           <Link to={"/"}>

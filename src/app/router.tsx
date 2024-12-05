@@ -10,6 +10,7 @@ import Detail from "./routes/customer/detail-tenda";
 import DetailTenda from "./routes/customer/detail-tenda";
 import DetailSound from "./routes/customer/detail-sound";
 import DetailPackage from "./routes/customer/detail-package";
+import Payment from "./routes/customer/payment";
 
 export default function RouterApp() {
   const router = createBrowserRouter([
@@ -51,6 +52,10 @@ export default function RouterApp() {
         {
           path: "/detail-paket",
           element: <DetailPackage />,
+        },
+        {
+          path: "/payment",
+          element: <Payment />,
         },
       ],
     },

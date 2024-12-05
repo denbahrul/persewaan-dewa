@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Detail({
   title,
   name,
@@ -35,9 +37,11 @@ export default function Detail({
           <p>{info}</p>
         </div>
       </div>
-      <div className="m-auto mt-10 flex w-52 justify-center rounded-full bg-black p-2">
-        <p className="items-center text-xl text-white">Order Sekarang</p>
-      </div>
+      <Link to={"/payment"}>
+        <div className="m-auto mt-10 flex w-52 justify-center rounded-full bg-black p-2">
+          <p className="items-center text-xl text-white">Order Sekarang</p>
+        </div>
+      </Link>
     </div>
   );
 }

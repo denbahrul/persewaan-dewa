@@ -4,7 +4,6 @@ import { IoMailOutline, IoCallOutline, IoLogoWhatsapp } from "react-icons/io5";
 export default function Contact() {
   return (
     <div className="m-auto max-w-screen-xl p-6 pt-24">
-      {/* Title */}
       <p className="text-center text-3xl font-extrabold text-gray-800">
         Contact
       </p>
