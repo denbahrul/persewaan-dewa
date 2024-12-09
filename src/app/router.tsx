@@ -6,7 +6,6 @@ import TentPackage from "./routes/customer/tent-package";
 import SoundSystem from "./routes/customer/sound";
 import Contact from "./routes/customer/contact";
 import Navbar from "../components/ui/navbar";
-import Detail from "./routes/customer/detail-tenda";
 import DetailTenda from "./routes/customer/detail-tenda";
 import DetailSound from "./routes/customer/detail-sound";
 import DetailPackage from "./routes/customer/detail-package";
