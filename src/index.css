@@ -13,3 +13,23 @@ body {
   font-family: "Funnel Display", sans-serif;
   background: #a8d4a7;
 }
+
+/* Tambahkan di file global CSS jika Tailwind */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white; /* Ubah warna tombol menjadi hitam */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: gray; /* Ubah warna saat hover jika diinginkan */
+}
+
+.swiper-pagination-bullet {
+  background-color: gray; /* Warna default titik */
+  opacity: 1; /* Pastikan terlihat penuh */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white; /* Warna titik aktif */
+}

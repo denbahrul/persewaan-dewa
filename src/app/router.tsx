@@ -14,12 +14,12 @@ import Payment from "./routes/customer/payment";
 export default function RouterApp() {
   const router = createBrowserRouter([
     {
+      path: "/",
+      element: <Home />,
+    },
+    {
       element: <Navbar />,
       children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
         {
           path: "/wedding-inspiration",
           element: <WeddingInspiration />,
