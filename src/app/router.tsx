@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes/customer/home";
 import WeddingInspiration from "./routes/customer/wedding-inspiration";
-import TentAndStage from "./routes/customer/tent-stage";
 import TentPackage from "./routes/customer/tent-package";
 import SoundSystem from "./routes/customer/sound";
 import Contact from "./routes/customer/contact";
@@ -10,6 +9,7 @@ import DetailTenda from "./routes/customer/detail-tenda";
 import DetailSound from "./routes/customer/detail-sound";
 import DetailPackage from "./routes/customer/detail-package";
 import Payment from "./routes/customer/payment";
+import Product from "./routes/customer/product";
 
 export default function RouterApp() {
   const router = createBrowserRouter([
@@ -25,8 +25,8 @@ export default function RouterApp() {
           element: <WeddingInspiration />,
         },
         {
-          path: "/tent-and-stage",
-          element: <TentAndStage />,
+          path: "/product",
+          element: <Product />,
         },
         {
           path: "/tent-package",

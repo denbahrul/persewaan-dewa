@@ -17,7 +17,7 @@ export default function Navbar() {
             <Link to={"/wedding-inspiration"}>
               <p>Inspirasi Wedding</p>
             </Link>
-            <Link to={"/tent-and-stage"}>
+            <Link to={"/product"}>
               <p>Product</p>
             </Link>
             <Link to={"/tent-package"}>
