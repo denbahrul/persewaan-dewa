@@ -10,6 +10,7 @@ import DetailSound from "./routes/customer/detail-sound";
 import DetailPackage from "./routes/customer/detail-package";
 import Payment from "./routes/customer/payment";
 import Product from "./routes/customer/product";
+import AdminLayout from "../components/layout/admin-layout";
 
 export default function RouterApp() {
   const router = createBrowserRouter([
@@ -22,19 +23,19 @@ export default function RouterApp() {
       children: [
         {
           path: "/wedding-inspiration",
-          element: <WeddingInspiration />,
+          element: <WeddingInspiration type={"customer"} />,
         },
         {
           path: "/product",
-          element: <Product />,
+          element: <Product type={"customer"} />,
         },
         {
           path: "/tent-package",
-          element: <TentPackage />,
+          element: <TentPackage type={"customer"} />,
         },
         {
           path: "/sound-system",
-          element: <SoundSystem />,
+          element: <SoundSystem type={"customer"} />,
         },
         {
           path: "/contact",
@@ -54,6 +55,48 @@ export default function RouterApp() {
         },
         {
           path: "/payment",
+          element: <Payment />,
+        },
+      ],
+    },
+    {
+      path: "/admin/",
+      element: <AdminLayout />,
+      children: [
+        {
+          path: "wedding-inspiration",
+          element: <WeddingInspiration type="admin" />,
+        },
+        {
+          path: "product",
+          element: <Product type="admin" />,
+        },
+        {
+          path: "tent-package",
+          element: <TentPackage type="admin" />,
+        },
+        {
+          path: "sound-system",
+          element: <SoundSystem type="admin" />,
+        },
+        {
+          path: "contact",
+          element: <Contact />,
+        },
+        {
+          path: "detail-tenda",
+          element: <DetailTenda />,
+        },
+        {
+          path: "detail-sound",
+          element: <DetailSound />,
+        },
+        {
+          path: "detail-paket",
+          element: <DetailPackage />,
+        },
+        {
+          path: "payment",
           element: <Payment />,
         },
       ],

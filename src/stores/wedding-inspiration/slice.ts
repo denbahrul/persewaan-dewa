@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
+  createWeddingInspiration,
   //   createWeddingInspiration,
   //   deleteWeddingInspiration,
   getWeddingInspiration,
@@ -49,17 +50,17 @@ const weddingInspirationSlice = createSlice({
     //   state.loading = "failed";
     // });
 
-    // //create weddingInspiration
-    // builder.addCase(createWeddingInspiration.fulfilled, (state, action) => {
-    //   state.entities = [...(state.entities || []), action.payload];
-    //   state.loading = "succeeded";
-    // });
-    // builder.addCase(createWeddingInspiration.pending, (state) => {
-    //   state.loading = "pending";
-    // });
-    // builder.addCase(createWeddingInspiration.rejected, (state) => {
-    //   state.loading = "failed";
-    // });
+    //create weddingInspiration
+    builder.addCase(createWeddingInspiration.fulfilled, (state, action) => {
+      state.entities = [...(state.entities || []), action.payload];
+      state.loading = "succeeded";
+    });
+    builder.addCase(createWeddingInspiration.pending, (state) => {
+      state.loading = "pending";
+    });
+    builder.addCase(createWeddingInspiration.rejected, (state) => {
+      state.loading = "failed";
+    });
 
     // //update weddingInspiration
     // builder.addCase(updateWeddingInspiration.fulfilled, (state, action) => {

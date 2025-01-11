@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import PackageCard from "../../../components/ui/package-card";
 import { useAppDispatch, useAppSelector } from "../../../hooks/use-store";
 import { getProduct } from "../../../stores/product/async";
+import { ComponentTypes } from "../../../types/component-types";
+import Button from "../../../components/ui/button";
 
-export default function SoundSystem() {
+export default function SoundSystem({ type }: ComponentTypes) {
   const dispatch = useAppDispatch();
   const { entities, loading } = useAppSelector((state) => state.product);
   const product = entities;
@@ -34,6 +36,14 @@ export default function SoundSystem() {
   return (
     <div className="m-auto max-w-screen-xl p-4 pt-24">
       <p className="text-2xl font-bold">Sound System</p>
+      {type === "admin" && (
+        <div className="flex justify-center pb-8">
+          <Button
+            // onClick={() => navigate("add-product")}
+            buttonName="Tembah sound system"
+          />
+        </div>
+      )}
       <div className="mt-4 grid grid-cols-2 gap-6 lg:grid-cols-3">
         {SoundSystem.map((sound) => {
           return (
