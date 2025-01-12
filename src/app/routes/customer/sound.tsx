@@ -12,7 +12,7 @@ export default function SoundSystem({ type }: ComponentTypes) {
   const { entities, loading } = useAppSelector((state) => state.product);
   const product = entities;
   const SoundSystem = product?.filter(
-    (product) => product.category.name === "Sound System",
+    (product) => product?.category?.name === "Sound System",
   );
 
   useEffect(() => {
@@ -57,6 +57,8 @@ export default function SoundSystem({ type }: ComponentTypes) {
               description={sound.description}
               satuan={`/${sound.satuan}`}
               link="/detail-sound"
+              type={type}
+              data="sound"
             />
           );
         })}

@@ -112,24 +112,24 @@ export const createProduct = createAsyncThunk<IProduct, CreateProductDTO>(
 //   }
 // });
 
-// export const deleteProduct = createAsyncThunk(
-//   "product/deleteProduct",
-//   async (id: number, thunkAPI) => {
-//     try {
-//       const res = await apiV1.delete(`/product/delete/${id}`);
-//       Swal.fire({
-//         icon: "success",
-//         title: res.data.message,
-//         showConfirmButton: false,
-//         iconColor: "#006dfc",
-//         timer: 1500,
-//       });
-//       return res.data.data.id;
-//     } catch (error) {
-//       console.log(error);
-//       if (error instanceof Error) {
-//         return thunkAPI.rejectWithValue(error.message);
-//       }
-//     }
-//   },
-// );
+export const deleteProduct = createAsyncThunk(
+  "product/deleteProduct",
+  async (id: number, thunkAPI) => {
+    try {
+      const res = await apiV1.delete(`/product/delete/${id}`);
+      Swal.fire({
+        icon: "success",
+        title: res.data.message,
+        showConfirmButton: false,
+        iconColor: "#006dfc",
+        timer: 1500,
+      });
+      return res.data.data.id;
+    } catch (error) {
+      console.log(error);
+      if (error instanceof Error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  },
+);

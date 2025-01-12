@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const createWEddingInspirationSchema = z.object({
-  title: z.string().min(1, "INspiration wedding title is required"),
+  title: z.string().min(1, "Nama inspirasi wedding harus diisi"),
   imageUrl: z.any(),
 });
 

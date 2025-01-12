@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/use-store";
 import {
   createWeddingInspiration,
+  deleteWeddingInspiration,
   getWeddingInspiration,
 } from "../../../stores/wedding-inspiration/async";
 import Button from "../../../components/ui/button";
@@ -40,6 +41,10 @@ export default function Wedding({ type }: ComponentTypes) {
     reset();
   }
 
+  function onDelete(id: number) {
+    dispatch(deleteWeddingInspiration(id));
+  }
+
   if (loading === "pending") {
     return (
       <div className="m-auto max-w-screen-xl p-4 pt-24">
@@ -60,13 +65,16 @@ export default function Wedding({ type }: ComponentTypes) {
     <div className="m-auto max-w-screen-xl p-4 pt-24">
       <p className="text-2xl font-bold">Inspirasi Wedding</p>
       {type === "admin" && (
-        <div className="justify-center pb-8" onSubmit={handleSubmit(onSubmit)}>
-          <form>
+        <div className="justify-center py-10" onSubmit={handleSubmit(onSubmit)}>
+          <p className="pb-4 text-center text-lg font-semibold">
+            Tambah Inspirasi Wedding
+          </p>
+          <form className="flex flex-col justify-center">
             <FormInput
               {...register("title")}
               type="Text"
               placeholder="Masukkan nama inspirasi wedding"
-              label="Wedding inpiration name"
+              label="Nama inspirasi wedding"
             ></FormInput>
             {errors.title && (
               <p className="text-rose-600">* {errors.title.message}</p>
@@ -75,6 +83,7 @@ export default function Wedding({ type }: ComponentTypes) {
               {...register("imageUrl")}
               type="file"
               label="Product Image"
+              required
             />
             <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
               {watch("imageUrl") &&
@@ -117,6 +126,14 @@ export default function Wedding({ type }: ComponentTypes) {
                 alt={`Image ${item.id}`}
                 className="h-72 w-full object-cover"
               />
+              {type === "admin" && (
+                <div
+                  className="cursor-pointer"
+                  onClick={() => onDelete(item.id)}
+                >
+                  <p className="bg-red p-1 text-center text-white">Hapus</p>
+                </div>
+              )}
             </div>
           );
         })}

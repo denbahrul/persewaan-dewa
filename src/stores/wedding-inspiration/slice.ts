@@ -1,11 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   createWeddingInspiration,
-  //   createWeddingInspiration,
-  //   deleteWeddingInspiration,
+  deleteWeddingInspiration,
   getWeddingInspiration,
-  //   getWeddingInspirationById,
-  //   updateWeddingInspiration,
 } from "./async";
 import { IWeddingInspiration } from "../../types/wedding-inspiration";
 
@@ -76,19 +73,19 @@ const weddingInspirationSlice = createSlice({
     //   state.loading = "failed";
     // });
 
-    // //delete weddingInspiration
-    // builder.addCase(deleteWeddingInspiration.fulfilled, (state, action) => {
-    //   state.entities = state.entities?.filter(
-    //     (weddingInspiration) => weddingInspiration.id !== action.payload,
-    //   );
-    //   state.loading = "succeeded";
-    // });
-    // builder.addCase(deleteWeddingInspiration.pending, (state) => {
-    //   state.loading = "pending";
-    // });
-    // builder.addCase(deleteWeddingInspiration.rejected, (state) => {
-    //   state.loading = "failed";
-    // });
+    //delete weddingInspiration
+    builder.addCase(deleteWeddingInspiration.fulfilled, (state, action) => {
+      state.entities = state.entities?.filter(
+        (weddingInspiration) => weddingInspiration.id !== action.payload,
+      );
+      state.loading = "succeeded";
+    });
+    builder.addCase(deleteWeddingInspiration.pending, (state) => {
+      state.loading = "pending";
+    });
+    builder.addCase(deleteWeddingInspiration.rejected, (state) => {
+      state.loading = "failed";
+    });
   },
 });
 

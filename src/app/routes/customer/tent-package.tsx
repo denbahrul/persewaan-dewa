@@ -53,6 +53,8 @@ export default function TentPackage({ type }: ComponentTypes) {
               imageUrl={tent.imageUrl}
               description={tent.description}
               link="/detail-sound"
+              type={type}
+              data="tent"
             />
           );
         })}

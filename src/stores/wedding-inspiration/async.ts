@@ -118,24 +118,24 @@ export const createWeddingInspiration = createAsyncThunk<
 //   }
 // });
 
-// export const deleteWeddingINspiration = createAsyncThunk(
-//   "weddingInspiration/deleteWeddingINspiration",
-//   async (id: number, thunkAPI) => {
-//     try {
-//       const res = await apiV1.delete(`/weddingInspiration/delete/${id}`);
-//       Swal.fire({
-//         icon: "success",
-//         title: res.data.message,
-//         showConfirmButton: false,
-//         iconColor: "#006dfc",
-//         timer: 1500,
-//       });
-//       return res.data.data.id;
-//     } catch (error) {
-//       console.log(error);
-//       if (error instanceof Error) {
-//         return thunkAPI.rejectWithValue(error.message);
-//       }
-//     }
-//   },
-// );
+export const deleteWeddingInspiration = createAsyncThunk(
+  "weddingInspiration/deleteWeddingINspiration",
+  async (id: number, thunkAPI) => {
+    try {
+      const res = await apiV1.delete(`/wedding-inspiration/delete/${id}`);
+      Swal.fire({
+        icon: "success",
+        title: res.data.message,
+        showConfirmButton: false,
+        iconColor: "#006dfc",
+        timer: 1500,
+      });
+      return res.data.data.id;
+    } catch (error) {
+      console.log(error);
+      if (error instanceof Error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  },
+);

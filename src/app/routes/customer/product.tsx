@@ -13,11 +13,11 @@ export default function Product({ type }: ComponentTypes) {
   const products = entities;
   const TentAndStage = products?.filter(
     (products) =>
-      products.category.name === "Tenda" ||
-      products.category.name === "Panggung",
+      products?.category?.name === "Tenda" ||
+      products?.category?.name === "Panggung",
   );
   const otherProducts = products?.filter(
-    (products) => products.category.name === "Lainnya",
+    (products) => products?.category?.name === "Lainnya",
   );
 
   useEffect(() => {
@@ -62,6 +62,7 @@ export default function Product({ type }: ComponentTypes) {
               category={product.category}
               id={product.id}
               satuan={product.satuan}
+              type={type}
             />
           ))}
         </div>
@@ -80,6 +81,7 @@ export default function Product({ type }: ComponentTypes) {
               category={product.category}
               id={product.id}
               satuan={product.satuan}
+              type={type}
             />
           ))}
         </div>

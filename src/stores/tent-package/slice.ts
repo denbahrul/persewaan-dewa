@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   createTentPackage,
+  deleteTentPackage,
   //   createTentPackage,
   //   deleteTentPackage,
   getTentPackage,
@@ -76,19 +77,19 @@ const tentPackageSlice = createSlice({
     //   state.loading = "failed";
     // });
 
-    // //delete tentPackage
-    // builder.addCase(deleteTentPackage.fulfilled, (state, action) => {
-    //   state.entities = state.entities?.filter(
-    //     (tentPackage) => tentPackage.id !== action.payload,
-    //   );
-    //   state.loading = "succeeded";
-    // });
-    // builder.addCase(deleteTentPackage.pending, (state) => {
-    //   state.loading = "pending";
-    // });
-    // builder.addCase(deleteTentPackage.rejected, (state) => {
-    //   state.loading = "failed";
-    // });
+    //delete tentPackage
+    builder.addCase(deleteTentPackage.fulfilled, (state, action) => {
+      state.entities = state.entities?.filter(
+        (tentPackage) => tentPackage.id !== action.payload,
+      );
+      state.loading = "succeeded";
+    });
+    builder.addCase(deleteTentPackage.pending, (state) => {
+      state.loading = "pending";
+    });
+    builder.addCase(deleteTentPackage.rejected, (state) => {
+      state.loading = "failed";
+    });
   },
 });
 

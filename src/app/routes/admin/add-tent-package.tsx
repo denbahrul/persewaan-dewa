@@ -59,7 +59,12 @@ export default function AddTentPackage() {
         {errors.description && (
           <p className="text-rose-600">* {errors.description.message}</p>
         )}
-        <FormInput {...register("imageUrl")} type="file" label="Gambar Paket" />
+        <FormInput
+          {...register("imageUrl")}
+          required
+          type="file"
+          label="Gambar Paket"
+        />
         <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
           {watch("imageUrl") &&
             Array.from(watch("imageUrl")).map((image, index) => (
