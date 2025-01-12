@@ -34,7 +34,6 @@ export default function TentPackage({ type }: ComponentTypes) {
 
   return (
     <div className="m-auto max-w-screen-xl p-4 pt-24">
-      <p className="text-2xl font-bold">Paket Tenda</p>
       {type === "admin" && (
         <div className="flex justify-center pb-8">
           <Button
@@ -43,6 +42,7 @@ export default function TentPackage({ type }: ComponentTypes) {
           />
         </div>
       )}
+      <p className="text-2xl font-bold">Paket Tenda</p>
       <div className="mt-4 grid grid-cols-2 gap-6 lg:grid-cols-3">
         {tentPackage.map((tent) => {
           return (

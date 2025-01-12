@@ -42,7 +42,6 @@ export default function Product({ type }: ComponentTypes) {
 
   return (
     <div className="m-auto max-w-screen-xl p-4 pt-24">
-      <p className="text-2xl font-bold">Tenda dan Panggung</p>
       {type === "admin" && (
         <div className="flex justify-center pb-8">
           <Button
@@ -51,6 +50,7 @@ export default function Product({ type }: ComponentTypes) {
           />
         </div>
       )}
+      <p className="text-2xl font-bold">Tenda dan Panggung</p>
       {TentAndStage ? (
         <div className="mt-4 grid grid-cols-4 gap-4">
           {TentAndStage.map((product) => (

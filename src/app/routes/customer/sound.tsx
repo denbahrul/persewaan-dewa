@@ -37,7 +37,6 @@ export default function SoundSystem({ type }: ComponentTypes) {
 
   return (
     <div className="m-auto max-w-screen-xl p-4 pt-24">
-      <p className="text-2xl font-bold">Sound System</p>
       {type === "admin" && (
         <div className="flex justify-center pb-8">
           <Button
@@ -46,6 +45,7 @@ export default function SoundSystem({ type }: ComponentTypes) {
           />
         </div>
       )}
+      <p className="text-2xl font-bold">Sound System</p>
       <div className="mt-4 grid grid-cols-2 gap-6 lg:grid-cols-3">
         {SoundSystem.map((sound) => {
           return (
