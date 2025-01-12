@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import Detail from "../../../components/detail";
 import { useAppDispatch, useAppSelector } from "../../../hooks/use-store";
 import { useEffect } from "react";
-import { getProductById } from "../../../stores/product/async";
 import { getTentPackageById } from "../../../stores/tent-package/async";
 
 export default function DetailTenda() {
