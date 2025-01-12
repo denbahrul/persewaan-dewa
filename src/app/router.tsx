@@ -11,7 +11,8 @@ import DetailPackage from "./routes/customer/detail-package";
 import Payment from "./routes/customer/payment";
 import Product from "./routes/customer/product";
 import AdminLayout from "../components/layout/admin-layout";
-import AddProduct from "../features/product/add-product";
+import AddProduct from "./routes/admin/add-product";
+import AddTentPackage from "./routes/admin/add-tent-package";
 
 export default function RouterApp() {
   const router = createBrowserRouter([
@@ -93,8 +94,8 @@ export default function RouterApp() {
           element: <AddProduct category="sound-system" />,
         },
         {
-          path: "detail-sound",
-          element: <DetailSound />,
+          path: "add-tent-package",
+          element: <AddTentPackage />,
         },
         {
           path: "detail-paket",

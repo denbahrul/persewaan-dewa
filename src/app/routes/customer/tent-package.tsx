@@ -4,8 +4,10 @@ import { useAppDispatch, useAppSelector } from "../../../hooks/use-store";
 import { getTentPackage } from "../../../stores/tent-package/async";
 import { ComponentTypes } from "../../../types/component-types";
 import Button from "../../../components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export default function TentPackage({ type }: ComponentTypes) {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { entities, loading } = useAppSelector((state) => state.tentPackage);
   const tentPackage = entities;
@@ -36,7 +38,7 @@ export default function TentPackage({ type }: ComponentTypes) {
       {type === "admin" && (
         <div className="flex justify-center pb-8">
           <Button
-            // onClick={() => navigate("add-product")}
+            onClick={() => navigate("/admin/add-tent-package")}
             buttonName="Tembah paket tenda"
           />
         </div>

@@ -6,7 +6,6 @@ import {
 } from "../../../stores/wedding-inspiration/async";
 import Button from "../../../components/ui/button";
 import { ComponentTypes } from "../../../types/component-types";
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import {
   CreateWeddingInspirationDTO,
@@ -16,7 +15,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import FormInput from "../../../components/ui/form-input";
 
 export default function Wedding({ type }: ComponentTypes) {
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { entities, loading } = useAppSelector(
     (state) => state.weddingInspiration,

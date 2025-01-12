@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
+  createTentPackage,
   //   createTentPackage,
   //   deleteTentPackage,
   getTentPackage,
@@ -49,17 +50,17 @@ const tentPackageSlice = createSlice({
     //   state.loading = "failed";
     // });
 
-    // //create tentPackage
-    // builder.addCase(createTentPackage.fulfilled, (state, action) => {
-    //   state.entities = [...(state.entities || []), action.payload];
-    //   state.loading = "succeeded";
-    // });
-    // builder.addCase(createTentPackage.pending, (state) => {
-    //   state.loading = "pending";
-    // });
-    // builder.addCase(createTentPackage.rejected, (state) => {
-    //   state.loading = "failed";
-    // });
+    //create tentPackage
+    builder.addCase(createTentPackage.fulfilled, (state, action) => {
+      state.entities = [...(state.entities || []), action.payload];
+      state.loading = "succeeded";
+    });
+    builder.addCase(createTentPackage.pending, (state) => {
+      state.loading = "pending";
+    });
+    builder.addCase(createTentPackage.rejected, (state) => {
+      state.loading = "failed";
+    });
 
     // //update tentPackage
     // builder.addCase(updateTentPackage.fulfilled, (state, action) => {

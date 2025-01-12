@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAppDispatch } from "../../hooks/use-store";
+import { useAppDispatch } from "../../../hooks/use-store";
 import {
   CreateProductDTO,
   createProductSchema,
-} from "../../validation/productSchema";
-import { createProduct } from "../../stores/product/async";
-import FormInput from "../../components/ui/form-input";
-import Button from "../../components/ui/button";
+} from "../../../validation/productSchema";
+import { createProduct } from "../../../stores/product/async";
+import FormInput from "../../../components/ui/form-input";
+import Button from "../../../components/ui/button";
 
 export default function AddProduct({
   category,
