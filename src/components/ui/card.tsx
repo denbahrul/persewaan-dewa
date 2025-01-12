@@ -35,7 +35,7 @@ export default function Card({
         </div>
       </div>
       {type === "customer" && (
-        <Link to={"/detail-tenda"}>
+        <Link to={`/detail-tenda/${id}`}>
           <p className="cursor-pointer rounded-md bg-black px-2 py-2 text-center text-xs text-white">
             Detail
           </p>

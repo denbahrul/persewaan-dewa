@@ -2,11 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   createTentPackage,
   deleteTentPackage,
-  //   createTentPackage,
-  //   deleteTentPackage,
   getTentPackage,
-  //   getTentPackageById,
-  //   updateTentPackage,
+  getTentPackageById,
 } from "./async";
 import { ITentPackage } from "../../types/tent-package";
 
@@ -38,18 +35,18 @@ const tentPackageSlice = createSlice({
       state.loading = "failed";
     });
 
-    // //get tentPackage by id
-    // builder.addCase(getTentPackageById.fulfilled, (state, action) => {
-    //   state.currentTentPackage = action.payload;
-    //   state.loading = "succeeded";
-    // });
-    // builder.addCase(getTentPackageById.pending, (state) => {
-    //   state.loading = "pending";
-    // });
-    // builder.addCase(getTentPackageById.rejected, (state) => {
-    //   state.currentTentPackage = null;
-    //   state.loading = "failed";
-    // });
+    //get tentPackage by id
+    builder.addCase(getTentPackageById.fulfilled, (state, action) => {
+      state.currentTentPackage = action.payload;
+      state.loading = "succeeded";
+    });
+    builder.addCase(getTentPackageById.pending, (state) => {
+      state.loading = "pending";
+    });
+    builder.addCase(getTentPackageById.rejected, (state) => {
+      state.currentTentPackage = null;
+      state.loading = "failed";
+    });
 
     //create tentPackage
     builder.addCase(createTentPackage.fulfilled, (state, action) => {

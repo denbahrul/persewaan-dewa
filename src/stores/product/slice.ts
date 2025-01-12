@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createProduct, deleteProduct, getProduct } from "./async";
+import {
+  createProduct,
+  deleteProduct,
+  getProduct,
+  getProductById,
+} from "./async";
 import { IProduct } from "../../types/product";
 
 interface ProductState {
@@ -30,18 +35,18 @@ const productSlice = createSlice({
       state.loading = "failed";
     });
 
-    // //get product by id
-    // builder.addCase(getProductById.fulfilled, (state, action) => {
-    //   state.currentProduct = action.payload;
-    //   state.loading = "succeeded";
-    // });
-    // builder.addCase(getProductById.pending, (state) => {
-    //   state.loading = "pending";
-    // });
-    // builder.addCase(getProductById.rejected, (state) => {
-    //   state.currentProduct = null;
-    //   state.loading = "failed";
-    // });
+    //get product by id
+    builder.addCase(getProductById.fulfilled, (state, action) => {
+      state.currentProduct = action.payload;
+      state.loading = "succeeded";
+    });
+    builder.addCase(getProductById.pending, (state) => {
+      state.loading = "pending";
+    });
+    builder.addCase(getProductById.rejected, (state) => {
+      state.currentProduct = null;
+      state.loading = "failed";
+    });
 
     //create product
     builder.addCase(createProduct.fulfilled, (state, action) => {

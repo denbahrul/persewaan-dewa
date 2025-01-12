@@ -44,21 +44,21 @@ export default function RouterApp() {
           element: <Contact />,
         },
         {
-          path: "/detail-tenda",
+          path: "/detail-tenda/:id",
           element: <DetailTenda />,
         },
         {
-          path: "/detail-sound",
+          path: "/detail-sound/:id",
           element: <DetailSound />,
         },
         {
           path: "/detail-paket",
           element: <DetailPackage />,
         },
-        {
-          path: "/payment",
-          element: <Payment />,
-        },
+        // {
+        //   path: "/payment",
+        //   element: <Payment />,
+        // },
       ],
     },
     {
@@ -97,14 +97,10 @@ export default function RouterApp() {
           path: "add-tent-package",
           element: <AddTentPackage />,
         },
-        {
-          path: "detail-paket",
-          element: <DetailPackage />,
-        },
-        {
-          path: "payment",
-          element: <Payment />,
-        },
+        // {
+        //   path: "payment",
+        //   element: <Payment />,
+        // },
       ],
     },
   ]);

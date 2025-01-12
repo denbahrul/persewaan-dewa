@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 export default function Detail({
   title,
   name,
-  info,
+  description,
   price,
   image,
 }: {
   title: string;
   name: string;
-  info: string;
-  price: string;
-  image: string;
+  description?: string;
+  price: number;
+  image?: string;
 }) {
   return (
     <div className="m-auto max-w-screen-xl p-6 pt-24">
@@ -34,10 +34,10 @@ export default function Detail({
         </div>
         <div>
           <p className="pb-4 text-lg font-semibold">Keterangan</p>
-          <p>{info}</p>
+          <p>{description}</p>
         </div>
       </div>
-      <Link to={"/payment"}>
+      <Link to={"https://wa.me/6285743311822"}>
         <div className="m-auto mt-10 flex w-52 justify-center rounded-full bg-black p-2">
           <p className="items-center text-xl text-white">Order Sekarang</p>
         </div>

@@ -20,21 +20,21 @@ export const getTentPackage = createAsyncThunk(
   },
 );
 
-// export const getTentPackageById = createAsyncThunk(
-//   "tentPackage/getTentPackageById",
-//   async (tentPackageId: number, thunkAPI) => {
-//     try {
-//       const res = await apiV1.get(`/tent-package/${tentPackageId}`);
+export const getTentPackageById = createAsyncThunk(
+  "tentPackage/getTentPackageById",
+  async (tentPackageId: number, thunkAPI) => {
+    try {
+      const res = await apiV1.get(`/tent-package/${tentPackageId}`);
 
-//       return res.data.data;
-//     } catch (error) {
-//       console.log(error);
-//       if (error instanceof Error) {
-//         return thunkAPI.rejectWithValue(error.message);
-//       }
-//     }
-//   },
-// );
+      return res.data.data;
+    } catch (error) {
+      console.log(error);
+      if (error instanceof Error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  },
+);
 
 export const createTentPackage = createAsyncThunk<
   ITentPackage,

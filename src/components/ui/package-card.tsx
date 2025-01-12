@@ -42,7 +42,7 @@ export default function PackageCard({
         </p>
 
         {type === "customer" && (
-          <Link to={link}>
+          <Link to={`${link}/${id}`}>
             <div className="flex w-full justify-center rounded-md bg-black py-1">
               <a className="text-center text-sm text-white">Detail</a>
             </div>
