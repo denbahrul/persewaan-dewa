@@ -51,7 +51,7 @@ export default function RouterApp() {
           element: <DetailSound />,
         },
         {
-          path: "/detail-paket",
+          path: "/detail-paket/:id",
           element: <DetailPackage />,
         },
         // {

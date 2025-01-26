@@ -20,20 +20,20 @@ export default function Detail({
         {title}
       </p>
       <p className="my-4 text-2xl font-extrabold">{name}</p>
-      <div className="flex gap-8">
-        <div className="w-[40%]">
+      <div className="gap-8 md:flex">
+        <div className="md:w-[40%]">
           <img
             className="h-96 w-full rounded-lg object-cover"
             src={image}
             alt="wedding inspiration"
           />
           <div className="mt-4">
-            <p>Harga :</p>
-            <p className="text-xl font-bold">Rp. {price}</p>
+            <p className="font-lg font-semibold">Harga :</p>
+            <p className="text-xl">Rp. {price}</p>
           </div>
         </div>
         <div>
-          <p className="pb-4 text-lg font-semibold">Keterangan</p>
+          <p className="mt-8 pb-4 text-lg font-semibold md:mt-0">Keterangan</p>
           <p>{description}</p>
         </div>
       </div>

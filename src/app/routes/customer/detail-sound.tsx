@@ -3,6 +3,8 @@ import Detail from "../../../components/detail";
 import { useAppDispatch, useAppSelector } from "../../../hooks/use-store";
 import { useEffect } from "react";
 import { getProductById } from "../../../stores/product/async";
+import Loading from "../../../components/ui/loading";
+import NotFound from "../../../components/ui/not-found";
 
 export default function DetailTenda() {
   const dispatch = useAppDispatch();
@@ -15,11 +17,11 @@ export default function DetailTenda() {
   }, [id]);
 
   if (loading === "pending") {
-    return <p>Loading</p>;
+    return <Loading />;
   }
 
   if (!product) {
-    return <p>Product tidak ditemukan</p>;
+    return <NotFound />;
   }
 
   return (

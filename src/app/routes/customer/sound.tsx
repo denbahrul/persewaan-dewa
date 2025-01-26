@@ -5,6 +5,7 @@ import { getProduct } from "../../../stores/product/async";
 import { ComponentTypes } from "../../../types/component-types";
 import Button from "../../../components/ui/button";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../../components/ui/loading";
 
 export default function SoundSystem({ type }: ComponentTypes) {
   const navigate = useNavigate();
@@ -20,11 +21,7 @@ export default function SoundSystem({ type }: ComponentTypes) {
   }, []);
 
   if (loading === "pending") {
-    return (
-      <div className="m-auto max-w-screen-xl p-4 pt-24">
-        <p>Loading</p>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (!SoundSystem) {
@@ -46,10 +43,11 @@ export default function SoundSystem({ type }: ComponentTypes) {
         </div>
       )}
       <p className="text-2xl font-bold">Sound System</p>
-      <div className="mt-4 grid grid-cols-2 gap-6 lg:grid-cols-3">
+      <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {SoundSystem.map((sound) => {
           return (
             <PackageCard
+              key={sound.id}
               id={sound.id}
               name={sound.name}
               price={sound.price}

@@ -3,23 +3,27 @@ import Detail from "../../../components/detail";
 import { useAppDispatch, useAppSelector } from "../../../hooks/use-store";
 import { useEffect } from "react";
 import { getTentPackageById } from "../../../stores/tent-package/async";
+import Loading from "../../../components/ui/loading";
+import NotFound from "../../../components/ui/not-found";
 
 export default function DetailTenda() {
   const dispatch = useAppDispatch();
   const { id } = useParams();
-  const product = useAppSelector((state) => state.product.currentProduct);
-  const loading = useAppSelector((state) => state.product.loading);
+  const product = useAppSelector(
+    (state) => state.tentPackage.currentTentPackage,
+  );
+  const loading = useAppSelector((state) => state.tentPackage.loading);
 
   useEffect(() => {
     dispatch(getTentPackageById(+id!));
   }, [id]);
 
   if (loading === "pending") {
-    return <p>Loading</p>;
+    return <Loading />;
   }
 
   if (!product) {
-    return <p>Product tidak ditemukan</p>;
+    return <NotFound />;
   }
 
   return (

@@ -5,6 +5,7 @@ import { getProduct } from "../../../stores/product/async";
 import { ComponentTypes } from "../../../types/component-types";
 import Button from "../../../components/ui/button";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../../components/ui/loading";
 
 export default function Product({ type }: ComponentTypes) {
   const navigate = useNavigate();
@@ -25,11 +26,7 @@ export default function Product({ type }: ComponentTypes) {
   }, []);
 
   if (loading === "pending") {
-    return (
-      <div className="m-auto max-w-screen-xl p-4 pt-24">
-        <p>Loading</p>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (!products) {
@@ -52,7 +49,7 @@ export default function Product({ type }: ComponentTypes) {
       )}
       <p className="text-2xl font-bold">Tenda dan Panggung</p>
       {TentAndStage ? (
-        <div className="mt-4 grid grid-cols-4 gap-4">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {TentAndStage.map((product) => (
             <Card
               key={product.id}
@@ -71,7 +68,7 @@ export default function Product({ type }: ComponentTypes) {
       )}
       <p className="mt-4 text-2xl font-bold">Produk Lainya</p>
       {otherProducts ? (
-        <div className="mt-4 grid grid-cols-4 gap-4">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {otherProducts.map((product) => (
             <Card
               key={product.id}

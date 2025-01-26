@@ -14,6 +14,7 @@ import {
 } from "../../../validation/weddingInspirationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import FormInput from "../../../components/ui/form-input";
+import Loading from "../../../components/ui/loading";
 
 export default function Wedding({ type }: ComponentTypes) {
   const dispatch = useAppDispatch();
@@ -46,11 +47,7 @@ export default function Wedding({ type }: ComponentTypes) {
   }
 
   if (loading === "pending") {
-    return (
-      <div className="m-auto max-w-screen-xl p-4 pt-24">
-        <p>Loading</p>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (!weddingInspiration) {
@@ -107,7 +104,7 @@ export default function Wedding({ type }: ComponentTypes) {
           </form>
         </div>
       )}
-      <div className="grid grid-cols-4 grid-rows-3 gap-4 py-4">
+      <div className="grid grid-cols-1 grid-rows-3 gap-4 py-4 sm:grid-cols-2 md:grid-cols-4">
         {weddingInspiration.map((item, index) => {
           // Tentukan apakah elemen berada di posisi spesifik dalam grup
           const isColSpan2 =
@@ -118,7 +115,7 @@ export default function Wedding({ type }: ComponentTypes) {
             <div
               key={item.id}
               className={`relative row-span-1 overflow-hidden rounded-lg bg-gray-100 shadow hover:shadow-lg ${
-                isColSpan2 ? "col-span-2" : "col-span-1"
+                isColSpan2 ? "md:col-span-2" : "md:col-span-1"
               }`}
             >
               <img
